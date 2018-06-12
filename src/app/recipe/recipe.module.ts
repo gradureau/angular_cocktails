@@ -5,11 +5,13 @@ import { StrToArrayPipe } from './str-to-array.pipe';
 import { RecipesComponent } from './recipes/recipes.component';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    RouterModule
   ],
   declarations: [
     RecipeComponent,

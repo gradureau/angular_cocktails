@@ -9,14 +9,21 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipesComponent implements OnInit {
 
-  recipes: Recipe[];
-
-  constructor(private recipeService: RecipeService) { }
+  $recipes: Recipe[];
+  isLoading: boolean;
+  constructor(private recipeService: RecipeService) {
+    this.isLoading = true;
+   }
 
   ngOnInit() {
+    this.loadRecipes();
+  }
+
+  private loadRecipes() {
     this.recipeService.getRecipes().subscribe(recipes => {
-      this.recipes = recipes;
+      this.$recipes = recipes;
     });
+    this.isLoading = false;
   }
 
 }
