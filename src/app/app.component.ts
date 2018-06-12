@@ -7,6 +7,6 @@ import {RECIPES} from './recipe/recipes.mock';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Anthony\'s app';
+  title = 'RG\'s app';
   recipes = RECIPES;
 }
