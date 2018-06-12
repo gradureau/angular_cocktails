@@ -1,0 +1,26 @@
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+        <img [src]="recipe.picture">
+    </div>
+    <mat-card-title>{{ recipe.name }}</mat-card-title>
+    <mat-card-subtitle>{{ recipe.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="recipe.picture" alt="{{ recipe.name }}">
+  <mat-card-content>
+    <p class="description">
+      {{ recipe.description }}
+    </p>
+    <ul *ngIf="this.expanded">
+      <li *ngFor=" let ingredient of recipe.ingredients" >
+        {{ingredient.quantity}} {{ingredient.unit}} de {{ingredient.name}}
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="seeMore()">Voir plus</button>
+    <button mat-raised-button color="primary">SHARE</button>
+  </mat-card-actions>
+</mat-card>
