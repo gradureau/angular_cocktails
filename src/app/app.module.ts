@@ -8,19 +8,23 @@ import { HeaderComponent } from './header/header.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { StrToArrayPipe } from './recipe/str-to-array.pipe';
+import { AppRoutingModule } from './/app-routing.module';
+import { RecipesComponent } from './recipe/recipes/recipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RecipeComponent,
-    StrToArrayPipe
+    StrToArrayPipe,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
