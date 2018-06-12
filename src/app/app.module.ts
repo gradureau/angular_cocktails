@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { StrToArrayPipe } from './recipe/str-to-array.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipeComponent
+    RecipeComponent,
+    StrToArrayPipe
   ],
   imports: [
     BrowserModule,

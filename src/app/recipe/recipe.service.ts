@@ -15,4 +15,9 @@ export class RecipeService {
   getRecipes(): Observable<Recipe[]> {
     return this.httpClient.get<Recipe[]>(this._baseUrl);
   }
+
+  getRecipe(id: string): Observable<Recipe> {
+    return this.httpClient.get<Recipe>(`${ this._baseUrl }/${ id }`);
+  }
+
 }
