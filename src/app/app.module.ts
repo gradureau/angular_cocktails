@@ -5,26 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { RecipeComponent } from './recipe/recipe.component';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
-import { StrToArrayPipe } from './recipe/str-to-array.pipe';
 import { AppRoutingModule } from './/app-routing.module';
-import { RecipesComponent } from './recipe/recipes/recipes.component';
+import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    RecipeComponent,
-    StrToArrayPipe,
-    RecipesComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RecipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
