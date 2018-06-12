@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from '../recipe.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipes',
@@ -9,7 +10,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipesComponent implements OnInit {
 
-  $recipes: Recipe[];
+  $recipes: Observable<Recipe[]>;
   isLoading: boolean;
   constructor(private recipeService: RecipeService) {
     this.isLoading = true;
@@ -20,9 +21,7 @@ export class RecipesComponent implements OnInit {
   }
 
   private loadRecipes() {
-    this.recipeService.getRecipes().subscribe(recipes => {
-      this.$recipes = recipes;
-    });
+    this.$recipes = this.recipeService.getRecipes();
     this.isLoading = false;
   }
 
