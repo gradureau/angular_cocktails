@@ -4,6 +4,7 @@ import { RecipeComponent } from './recipe.component';
 import { StrToArrayPipe } from './str-to-array.pipe';
 import { RecipesComponent } from './recipes/recipes.component';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { CustomMaterialModule } from '../custom-material/custom-material.module'
   declarations: [
     RecipeComponent,
     StrToArrayPipe,
-    RecipesComponent
+    RecipesComponent,
+    RecipeDetailComponent
   ],
   exports: [
   ]
