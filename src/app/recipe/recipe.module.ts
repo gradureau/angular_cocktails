@@ -8,6 +8,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RouterModule } from '@angular/router';
 import { RecipeAddComponent } from './recipe-add/recipe-add.component';
 import { FormsModule } from '@angular/forms';
+import { OrderByNamePipe } from './order-by-name.pipe';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     StrToArrayPipe,
     RecipesComponent,
     RecipeDetailComponent,
-    RecipeAddComponent
+    RecipeAddComponent,
+    OrderByNamePipe
   ],
   exports: [
   ]
