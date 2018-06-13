@@ -10,6 +10,7 @@
   <mat-card-actions>
     <button mat-raised-button color="primary"
     routerLink="/recipes/{{ recipe.id }}">Voir plus</button>
-    <button mat-raised-button color="primary">SHARE</button>
+    <button mat-raised-button color="primary"
+    (click)="delete()" >Supprimer</button>
   </mat-card-actions>
 </mat-card>

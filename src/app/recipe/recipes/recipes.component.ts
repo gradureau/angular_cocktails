@@ -10,19 +10,20 @@ import { Observable } from 'rxjs';
 })
 export class RecipesComponent implements OnInit {
 
-  $recipes: Observable<Recipe[]>;
-  isLoading: boolean;
-  constructor(private recipeService: RecipeService) {
-    this.isLoading = true;
-   }
+  recipes: Recipe[];
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit() {
     this.loadRecipes();
   }
 
   private loadRecipes() {
-    this.$recipes = this.recipeService.getRecipes();
-    this.isLoading = false;
+    this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes);
+  }
+
+  removeRecipe(recipe: Recipe) {
+    const index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
   }
 
 }
