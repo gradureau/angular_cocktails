@@ -28,4 +28,8 @@ export class RecipeService {
     return this.httpClient.delete(`${ this._baseUrl }/${ id }`);
   }
 
+  patchRecipe(recipe: Recipe): Observable<any> {
+    return this.httpClient.patch(this._baseUrl, recipe);
+  }
+
 }

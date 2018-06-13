@@ -2,22 +2,23 @@
   <mat-card-header>
     <mat-card-title>Création d'une recette</mat-card-title>
     <mat-card-subtitle>Un nouveau cocktail !</mat-card-subtitle>
+    <p *ngIf="success">Success !</p>
   </mat-card-header>
-  <mat-card-content>
-    <form class="example-form" [formGroup]="addForm">
+  <mat-card-content *ngIf="editForm">
+    <form class="example-form" [formGroup]="editForm">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Nom de la recette"
-        name="name" formControlName="name">
+        name="name" formControlName="name" value="{{ this.recipe.name }}">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Url de l'image"
-        name="picture" formControlName="picture">
+        name="picture" formControlName="picture" value="{{ this.recipe.picture }}">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <textarea matInput placeholder="Description"
-        name="description" formControlName="description"></textarea>
+        name="description" formControlName="description" value="{{ this.recipe.description }}"></textarea>
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="submit()">Confirmer</button>

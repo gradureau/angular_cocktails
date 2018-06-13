@@ -26,6 +26,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="seeMore()">Voir plus</button>
-    <button mat-raised-button color="primary">SHARE</button>
+    <button mat-raised-button color="primary" routerLink="/recipes/edit/{{ recipe.id }}" >Editer</button>
   </mat-card-actions>
 </mat-card>

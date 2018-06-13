@@ -3,6 +3,7 @@ import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { Ingredient } from '../ingredient.model';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-add',
@@ -10,6 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./recipe-add.component.scss']
 })
 export class RecipeAddComponent implements OnInit {
+
+addForm = new FormGroup({
+  name : new FormControl(
+    '', Validators.required
+  ),
+  picture : new FormControl(),
+  description : new FormControl()
+});
+
 
   recipe: Recipe;
 
@@ -21,11 +31,14 @@ export class RecipeAddComponent implements OnInit {
   }
 
   submit() {
-    const ingredient = new Ingredient();
-    ingredient.ingredientId = 1;
-    this.recipe.ingredients = [ ingredient ];
-    this.recipeService.createRecipe(this.recipe).subscribe();
-    this.router.navigate(['/']);
+    if (this.addForm.valid) {
+      this.recipe = this.addForm.value;
+      const ingredient = new Ingredient();
+      ingredient.ingredientId = 1;
+      this.recipe.ingredients = [ ingredient ];
+      this.recipeService.createRecipe(this.recipe).subscribe();
+      this.router.navigate(['/']);
+    }
   }
 
 }
