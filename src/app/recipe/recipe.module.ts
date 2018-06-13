@@ -6,18 +6,22 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RouterModule } from '@angular/router';
+import { RecipeAddComponent } from './recipe-add/recipe-add.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     CustomMaterialModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     RecipeComponent,
     StrToArrayPipe,
     RecipesComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeAddComponent
   ],
   exports: [
   ]

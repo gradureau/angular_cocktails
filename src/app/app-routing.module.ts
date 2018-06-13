@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipe/recipes/recipes.component';
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { RecipeAddComponent } from './recipe/recipe-add/recipe-add.component';
 
 const routes: Routes = [
   {
     path: 'recipes',
     component: RecipesComponent
+  },
+  {
+    path: 'recipes/create',
+    component: RecipeAddComponent
   },
   {
     path: 'recipes/:id',

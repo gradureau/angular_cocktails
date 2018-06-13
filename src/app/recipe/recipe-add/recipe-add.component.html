@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Création d'une recette</mat-card-title>
+    <mat-card-subtitle>Un nouveau cocktail !</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nom de la recette"
+        name="name" [(ngModel)]="recipe.name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Url de l'image"
+        name="picture" [(ngModel)]="recipe.picture">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Description"
+        name="description" [(ngModel)]="recipe.description"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="submit()">Confirmer</button>
+    </form>
+  </mat-card-content>
+</mat-card>

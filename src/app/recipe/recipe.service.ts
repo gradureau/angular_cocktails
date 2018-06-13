@@ -20,4 +20,12 @@ export class RecipeService {
     return this.httpClient.get<Recipe>(`${ this._baseUrl }/${ id }`);
   }
 
+  createRecipe(recipe: Recipe): Observable<any> {
+    return this.httpClient.post(this._baseUrl, recipe);
+  }
+
+  deleteRecipe(id: number) {
+    return this.httpClient.delete(`${ this._baseUrl }/${ id }`);
+  }
+
 }
